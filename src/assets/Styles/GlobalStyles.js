@@ -1,0 +1,30 @@
+var width = document.documentElement.clientWidth;
+var height = document.documentElement.clientHeight;
+
+export const globalStyles = {
+  greenColor: '#779f7d',
+  greenOpacity3: 'rgba(119, 159, 125,0.3)',
+  greenOpacity5: 'rgba(119, 159, 125,0.5)',
+  blackColor: '#1f232a',
+  blackDarkColor: '#000000',
+  brownColor: '#7d575e',
+  whiteColor: '#ffffff',
+  whiteGreyColor: '#f5f5f5',
+  whiteDarkColor: '#f9f7ee',
+  darkGreyColor: '#3a3a3a',
+  greyBlueColor: '#565d68',
+  greyColor: '#848484',
+  h14: width < 400 ? 11 : width >= 400 ? 12 : width >= 580 ? 14 : 14,
+  h16: width < 400 ? 12 : width >= 400 ? 14 : width >= 580 ? 16 : 16,
+  h18: width < 400 ? 14 : width >= 400 ? 16 : width >= 580 ? 18 : 18,
+  h20: width < 400 ? 16 : width >= 400 ? 18 : width >= 580 ? 20 : 20,
+  h24: width < 400 ? 20 : width >= 400 ? 22 : width >= 580 ? 24 : 24,
+  h30: width < 400 ? 26 : width >= 400 ? 28 : width >= 580 ? 30 : 30,
+  h35: width < 400 ? 31 : width >= 400 ? 33 : width >= 580 ? 35 : 35,
+  h60: width < 400 ? 56 : width >= 400 ? 58 : width >= 580 ? 60 : 60,
+  p3: '3%',
+  p7: '7%',
+  m5: '5%',
+  m7: '5%',
+  flagSize: 35,
+};

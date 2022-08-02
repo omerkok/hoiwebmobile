@@ -1,0 +1,27 @@
+.HeaderContainer {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 0px;  
+  position: sticky;
+  top:0;
+ 
+}
+.HeaderContainerTop {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  z-index: 2 !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end !important;
+}
+.HeaderContainerBottom {
+  display: flex;
+  z-index: 1 !important;
+  align-items: center;
+  justify-content: center;
+
+}
+
