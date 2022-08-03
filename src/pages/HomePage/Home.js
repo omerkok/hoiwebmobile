@@ -242,7 +242,8 @@ const styles = {
   },
   stagesSwiper: {
     width: width,
-    height: height * 0.4,
+    height:
+      height < 750 ? height * 0.5 : height > 870 ? height * 0.4 : height * 0.35,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',

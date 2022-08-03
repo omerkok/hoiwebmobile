@@ -503,7 +503,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    marginBottom: height * 0.05,
+    marginBottom: height * 0.02,
   },
   typeSubContainer2: {
     display: 'flex',
@@ -511,6 +511,14 @@ const styles = {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    height:
+      width < 400
+        ? height * 0.15
+        : width <= 579
+        ? height * 0.16
+        : width >= 580
+        ? height * 0.18
+        : height * 0.15,
   },
   typeIconButton: {
     display: 'flex',
@@ -563,7 +571,8 @@ const styles = {
   },
   swiperStyles: {
     width: width,
-    height: height * 0.47,
+    height:
+      height < 750 ? height * 0.5 : height > 870 ? height * 0.5 : height * 0.39,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',

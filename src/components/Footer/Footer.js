@@ -2,6 +2,12 @@ import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import Link from '@mui/material/Link';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import WideButton from '../WideButton';
 import ContactFrom from '../ContactFrom';
 import BlogPost from '../BlogPost';
@@ -16,6 +22,12 @@ var width = document.documentElement.clientWidth;
 var height = document.documentElement.clientHeight;
 
 const BeforeAfter = () => {
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<span class="' + className + '">' + (index + 1) + '</span>';
+    },
+  };
   return (
     <div
       style={{
@@ -25,51 +37,52 @@ const BeforeAfter = () => {
         flexDirection: 'column',
       }}>
       {' '}
-      <span id='BeforeAfter'>{'BEFORE & AFTER'}</span>
-      <span id='HairTransparent'>{'hair transplant'}</span>
+      <span id='BeforeAfter' style={{ marginBottom: height * 0.02 }}>
+        {'BEFORE & AFTER'}
+      </span>
       <div id='ImageContainer' style={{ paddingBottom: height * 0.1 }}>
-        <div
-          style={{
-            width: '100%',
-            height: 'auto',
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}>
-          <div style={{ width: '15%', height: '80%', paddingRight: '10%' }}>
-            <img
-              id='Image1'
-              src={BeforeAfter2}
-              style={{
-                width: '100%',
-                height: '100%',
-                opacity: 0.5,
-                objectFit: 'cover',
-              }}
-              alt='BeforeAfter'
-            />
-          </div>
-          <div style={{ width: '50%', height: '100%' }}>
+        <Swiper
+          style={styles.swiper}
+          autoplay={true}
+          modules={[Pagination, A11y]}
+          spaceBetween={50}
+          slidesPerView={1}
+          pagination={pagination}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}>
+          <SwiperSlide>
+            <span style={styles.swiperTitle}>{'hair transplant'}</span>
             <img
               src={BeforeAfter2}
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              style={styles.swiperImage}
               alt='BeforeAfter'
             />
-          </div>
-          <div style={{ width: '15%', height: '80%', paddingLeft: '10%' }}>
+          </SwiperSlide>
+          <SwiperSlide>
+            <span style={styles.swiperTitle}>{'afro type'}</span>
             <img
-              id='Image2'
               src={BeforeAfter2}
-              style={{
-                width: '100%',
-                height: '100%',
-                opacity: 0.5,
-                objectFit: 'cover',
-              }}
+              style={styles.swiperImage}
               alt='BeforeAfter'
             />
-          </div>
-        </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <span style={styles.swiperTitle}>{'beard'}</span>
+            <img
+              src={BeforeAfter2}
+              style={styles.swiperImage}
+              alt='BeforeAfter'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <span style={styles.swiperTitle}>{'woman'}</span>
+            <img
+              src={BeforeAfter2}
+              style={styles.swiperImage}
+              alt='BeforeAfter'
+            />
+          </SwiperSlide>
+        </Swiper>
 
         <p className='line7' style={styles.pStyle1}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -242,5 +255,33 @@ const styles = {
   logoStyle: {
     height: width * 0.22,
     width: width * 0.22,
+  },
+  swiper: {
+    width: width,
+    height:
+      height < 750
+        ? height * 0.63
+        : height > 870
+        ? height * 0.63
+        : height * 0.5,
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  swiperTitle: {
+    color: globalStyles.greyBlueColor,
+    fontFamily: 'PoppinsBold',
+    fontSize: globalStyles.h24,
+    width: 'auto',
+    display: 'inline-block',
+    marginLeft: width * 0.2,
+    marginRight: width * 0.2,
+  },
+  swiperImage: {
+    width: '60%',
+    objectFit: 'contain',
+    marginBottom: '5%',
+    marginTop: height * 0.02,
   },
 };

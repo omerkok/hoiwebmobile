@@ -158,7 +158,8 @@ const styles = {
   },
   swiper: {
     width: width,
-    height: height * 0.45,
+    height:
+      height < 750 ? height * 0.5 : height > 870 ? height * 0.5 : height * 0.39,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
