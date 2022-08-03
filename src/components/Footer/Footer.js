@@ -259,11 +259,14 @@ const styles = {
   swiper: {
     width: width,
     height:
-      height < 750
-        ? height * 0.63
-        : height > 870
+      width < 400
+        ? height * 0.5
+        : width <= 579
+        ? height * 0.52
+        : width >= 580
         ? height * 0.63
         : height * 0.5,
+
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
