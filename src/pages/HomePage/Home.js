@@ -227,7 +227,6 @@ const styles = {
   },
   stagesContainer: {
     width: '100%',
-    height: height,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-evenly',
@@ -243,7 +242,13 @@ const styles = {
   stagesSwiper: {
     width: width,
     height:
-      height < 750 ? height * 0.5 : height > 870 ? height * 0.4 : height * 0.35,
+      height < 600
+        ? height * 0.42
+        : height < 750
+        ? height * 0.4
+        : height > 870
+        ? height * 0.34
+        : height * 0.35,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',

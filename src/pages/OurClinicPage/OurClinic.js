@@ -159,7 +159,13 @@ const styles = {
   swiper: {
     width: width,
     height:
-      height < 750 ? height * 0.5 : height > 870 ? height * 0.5 : height * 0.39,
+      height < 600
+        ? height * 0.6
+        : height < 750
+        ? height * 0.5
+        : height > 870
+        ? height * 0.38
+        : height * 0.39,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',

@@ -512,9 +512,9 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-evenly',
     height:
-      width < 400
+      height <= 579
         ? height * 0.15
-        : width <= 579
+        : width <= 750
         ? height * 0.16
         : width >= 580
         ? height * 0.18
@@ -572,7 +572,13 @@ const styles = {
   swiperStyles: {
     width: width,
     height:
-      height < 750 ? height * 0.5 : height > 870 ? height * 0.5 : height * 0.39,
+      height < 600
+        ? height * 0.6
+        : height < 750
+        ? height * 0.5
+        : height > 870
+        ? height * 0.38
+        : height * 0.39,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',

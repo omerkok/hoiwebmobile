@@ -11,7 +11,12 @@ const Menu = () => {
     <div
       style={{
         width: width,
-        height: height * 0.6,
+        height:
+          height < 750
+            ? height * 0.7
+            : height > 870
+            ? height * 0.55
+            : height * 0.6,
         flexDirection: 'column',
         display: 'flex',
         justifyContent: 'center',
