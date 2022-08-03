@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
@@ -24,6 +24,9 @@ const OurClinic = () => {
       return '<span class="' + className + '">' + (index + 1) + '</span>';
     },
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={styles.container}>
       <Header />

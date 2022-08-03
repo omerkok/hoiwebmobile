@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Divider from '@mui/material/Divider';
 import Header from '../../components/Header';
@@ -113,6 +113,9 @@ export const Operations = () => {
 };
 
 const HairTransplant = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={styles.container}>
       <Header />

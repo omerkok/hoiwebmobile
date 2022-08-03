@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import IconButton from '@mui/material/IconButton';
 import { globalStyles } from '../../assets/Styles';
 import Header from '../../components/Header';
@@ -58,6 +58,9 @@ export const DhiFueContent = () => {
 };
 
 const DhiAndFue = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={styles.container}>
       <Header />

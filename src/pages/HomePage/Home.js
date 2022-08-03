@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import IconButton from '@mui/material/IconButton';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -95,6 +95,9 @@ export const Stages = () => {
       return '<span class="' + className + '">' + (index + 1) + '</span>';
     },
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={styles.stagesContainer}>
       <span style={styles.stagesTitle}>{'STAGES'}</span>
@@ -137,6 +140,9 @@ export const Stages = () => {
 };
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={styles.container}>
       <Header />

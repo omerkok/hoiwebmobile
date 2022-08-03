@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Divider from '@mui/material/Divider';
@@ -35,6 +35,9 @@ var width = document.documentElement.clientWidth;
 var height = document.documentElement.clientHeight;
 
 const ContactUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={styles.container}>
       <Header />

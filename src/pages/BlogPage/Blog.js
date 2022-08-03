@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -102,6 +102,9 @@ export const BlogContent = () => {
 };
 
 const Blog = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={styles.container}>
       <Header />
